@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+ 
+.title {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+ 
+.game-board {
+  display: flex;
+  justify-content: center;
+  max-width: 750px;
+  margin: 0 auto;
+  border: 1px solid #333;
+}
+ 
+.player-panel {
+  flex: 1;
+  padding: 20px;
+  min-height: 320px;
+}
+ 
+.player-panel:first-child {
+  border-right: 2px solid #333;
+}
+ 
+.card-row {
+  display: flex;
+  justify-content: center;
+  gap: 0px;
+  margin-bottom: 30px;
+}
+ 
+.card-slot {
+  width: 100px;
+  height: 150px;
+  border: 1px solid #999;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+  background-color: #fff;
+ 
+}
+ 
+.card-slot.dealt {
+  animation: popIn 0s ease;
+}
+ 
+@keyframes popIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+ 
+.card-corner {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  font-size: 0.85rem;
+}
+ 
+.card-corner .card-suit {
+  font-size: 0.9rem;
+}
+ 
+.card-corner.top-left {
+  top: 5px;
+  left: 6px;
+}
+ 
+.card-corner.bottom-right {
+  bottom: 5px;
+  right: 6px;
+  transform: rotate(180deg);
+}
+ 
+.card-center {
+  font-size: 4.4rem;
+}
+ 
+.card-slot.red {
+  color: #d40000;
+}
+ 
+.card-slot.black {
+  color: #1a1a1a;
+}
+ 
+.score-display {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+ 
+.draw-button {
+  margin: 24px 0 0;
+  max-width: 700px;
+  width: 100%;
+  padding: 14px;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #2f6fb3;
+  border: none;
+  cursor: pointer;
+}
+ 
+.draw-button:hover:not(:disabled) {
+  background-color: #275c95;
+}
+ 
+.draw-button:disabled {
+  background-color: #9fb8d1;
+  cursor: not-allowed;
+}
